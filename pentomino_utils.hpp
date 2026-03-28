@@ -128,9 +128,10 @@ inline void VisualisePiece(){
     }
 }
 
-inline cv::Mat ReadBoard(){
+inline cv::Mat ReadBoard(const std::string& filename){
     std::string line, buffer="";
-    std::ifstream board_file("../Board.txt");
+    std::string filepath = "../"+filename;
+    std::ifstream board_file(filepath);
     std::size_t width;
 
     if (board_file.is_open()) {
